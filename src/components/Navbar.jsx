@@ -25,14 +25,17 @@ const Navbar = () => {
           ))}
         </ul>
         <IoMoon className=" hidden md:block w-8 cursor-pointer text-yellow-600" />
+
         <IoIosMenu
-          className="md:hidden w-8 h-8 mr-2 cursor-pointer"
+          className={`md:hidden w-8 h-8 mr-2 cursor-pointer z-20 ${
+            isMenuOpen ? "text-white" : "text-black"
+          }`}
           onClick={() => toggleMenu()}
         />
         {isMenuOpen && (
-          <ul className="bg-orange-800">
+          <ul className=" bg-indigo-900 absolute top-0 left-0 w-full p-10 rounded-b-3xl space-y-10 text-white text-center">
             {menu.map((item, index) => (
-              <li key={index}>
+              <li key={index} className="">
                 <a href={`/${item.toLowerCase()}`}>{item}</a>
               </li>
             ))}
