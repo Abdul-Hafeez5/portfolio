@@ -11,7 +11,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="font-nunito w-full fixed top-0 ">
+    <nav className=" w-full fixed top-0 bg-white z-10">
       <div className="container mx-auto py-5 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <img className="w-8" src="" alt="logo" />
