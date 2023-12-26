@@ -11,11 +11,13 @@ const Navbar = () => {
   };
 
   return (
-    <nav className=" w-full fixed top-0 bg-white z-10">
+    <nav className=" w-full fixed top-0 bg-white z-10 dark:bg-slate-900">
       <div className="container mx-auto py-5 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <img className="w-8" src="" alt="logo" />
-          <span className="text-2xl font-bold text-indigo-900">portfolio</span>
+        <div className="flex items-center gap-2 ">
+          {/* <img className="w-8" src="" alt="logo" /> */}
+          <span className="text-2xl font-bold text-indigo-900 dark:text-white">
+            portfolio
+          </span>
         </div>
         <ul className="hidden md:flex space-x-10 text-gray-600 font-bold text-sm uppercase">
           {menu.map((item, index) => (
@@ -33,7 +35,7 @@ const Navbar = () => {
           onClick={() => toggleMenu()}
         />
         {isMenuOpen && (
-          <ul className=" bg-indigo-900 absolute top-0 left-0 w-full p-10 rounded-b-3xl space-y-10 text-white text-center">
+          <ul className=" bg-indigo-900 absolute left-0 top-0 w-full p-10 rounded-b-3xl space-y-10 text-white text-center">
             {menu.map((item, index) => (
               <li key={index} className="">
                 <a href={`/${item.toLowerCase()}`}>{item}</a>
