@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { IoMoon } from "react-icons/io5";
 import { IoIosMenu } from "react-icons/io";
+import { ThemeContext } from "../ThemeContext";
 
 const Navbar = () => {
+  const { isDarkMode, toggleTheme } = useContext(ThemeContext);
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menu = ["Home", "About", "services", "works", "contact"];
 
@@ -11,11 +14,18 @@ const Navbar = () => {
   };
 
   return (
-    <nav className=" w-full fixed top-0 bg-white z-10 dark:bg-slate-900">
+    <nav
+      className={`w-full fixed top-0 ${
+        isDarkMode ? "bg-slate-900" : "bg-white"
+      }  z-10`}
+    >
       <div className="container mx-auto py-5 flex items-center justify-between">
         <div className="flex items-center gap-2 ">
-          {/* <img className="w-8" src="" alt="logo" /> */}
-          <span className="text-2xl font-bold text-indigo-900 dark:text-white">
+          <span
+            className={`text-2xl font-bold ml-3 ${
+              isDarkMode ? "text-white" : "text-indigo-900"
+            }  `}
+          >
             portfolio
           </span>
         </div>
@@ -26,7 +36,10 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-        <IoMoon className=" hidden md:block w-8 cursor-pointer text-yellow-600" />
+        <IoMoon
+          className=" hidden md:block w-8 cursor-pointer text-yellow-600"
+          onClick={toggleTheme}
+        />
 
         <IoIosMenu
           className={`md:hidden w-8 h-8 mr-2 cursor-pointer z-20 ${

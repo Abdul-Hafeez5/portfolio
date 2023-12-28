@@ -1,10 +1,13 @@
 // import AboutImg from "../assets/AoutImg.jpeg";
+import { useContext } from "react";
 import AboutImg1 from "../assets/About1.jpeg";
 import dotsImg from "../assets/dots.png";
+import { ThemeContext } from "../ThemeContext";
 
 const About = () => {
+  const { isDarkMode } = useContext(ThemeContext);
   return (
-    <div id="about" className="px-10 dark:bg-slate-900">
+    <div id="about" className={`px-10 ${isDarkMode && "bg-slate-900"}`}>
       <div className="container mx-auto py-40 flex flex-col-reverse lg:flex-row items-center gap-20">
         <div className="relative">
           <img
@@ -18,10 +21,10 @@ const About = () => {
         </div>
         <div className="my-auto flex flex-col gap-3">
           <h1 className="text-indigo-600 font-bold">ABOUT ME</h1>
-          <h1 className="text-3xl font-medium dark:text-white">
+          <h1 className={`text-3xl font-medium ${isDarkMode && "text-white"} `}>
             Better Design
           </h1>
-          <h1 className="text-3xl font-medium dark:text-white">
+          <h1 className={`text-3xl font-medium ${isDarkMode && "text-white"} `}>
             Better Experience
           </h1>
           <p className="text-gray-400">

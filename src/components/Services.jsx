@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from "../ThemeContext";
 
 const Services = () => {
+  const { isDarkMode } = useContext(ThemeContext);
   return (
-    <div id="services" className="dark:bg-slate-900">
+    <div id="services" className={`${isDarkMode && "bg-slate-900"}`}>
       <div className="container mx-auto">
         <div className="flex flex-col gap-3 items-center">
           <h1 className="text-indigo-600 font-bold">SERVICES</h1>
-          <h1 className="text-3xl dark:text-white">What do I offer?</h1>
+          <h1 className={`text-3xl ${isDarkMode && "text-white"}`}>
+            What do I offer?
+          </h1>
           <p className="w-1/2 text-center text-gray-400">
             My approach to website design is to create a website that
             strengthens your company’s brand while ensuring ease of use and
@@ -16,8 +20,8 @@ const Services = () => {
         <div className="p-5 sm:p-0 flex flex-wrap justify-between">
           <div className="w-full md:w-4/12 shadow-xl rounded-lg p-5 my-3 md:my-10 flex flex-col gap-3">
             <img className="w-10" src="./img/icon.png" alt="" />
-            <h1 className="font-medium text-lg dark:text-white">
-              UX / UI Design
+            <h1 className={`font-medium text-lg ${isDarkMode && "text-white"}`}>
+              Full-Stack Development
             </h1>
             <p className="text-gray-400">
               I specialize in creating interactive websites for individuals and
@@ -29,8 +33,8 @@ const Services = () => {
           </div>
           <div className="w-full md:w-4/12 shadow-xl rounded-lg p-5 my-3 md:my-10 flex flex-col gap-3">
             <img className="w-10" src="./img/icon.png" alt="" />
-            <h1 className="font-medium text-lg dark:text-white">
-              UX / UI Design
+            <h1 className={`font-medium text-lg ${isDarkMode && "text-white"}`}>
+              Front-End Development with React and tailwind
             </h1>
             <p className="text-gray-400">
               I specialize in creating interactive websites for individuals and
@@ -42,8 +46,8 @@ const Services = () => {
           </div>
           <div className="w-full md:w-4/12 shadow-xl rounded-lg p-5 my-3 md:my-10 flex flex-col gap-3">
             <img className="w-10" src="./img/icon.png" alt="" />
-            <h1 className="font-medium text-lg dark:text-white">
-              UX / UI Design
+            <h1 className={`font-medium text-lg ${isDarkMode && "text-white"}`}>
+              Back-End Development with Node.js and Express.js:
             </h1>
             <p className="text-gray-400">
               I specialize in creating interactive websites for individuals and
@@ -55,8 +59,8 @@ const Services = () => {
           </div>
           <div className="w-full md:w-4/12 shadow-xl rounded-lg p-5 my-3 md:my-10 flex flex-col gap-3">
             <img className="w-10" src="./img/icon.png" alt="" />
-            <h1 className="font-medium text-lg dark:text-white">
-              UX / UI Design
+            <h1 className={`font-medium text-lg ${isDarkMode && "text-white"}`}>
+              RESTful API Development
             </h1>
             <p className="text-gray-400">
               I specialize in creating interactive websites for individuals and
@@ -68,8 +72,8 @@ const Services = () => {
           </div>
           <div className="w-full md:w-4/12 shadow-xl rounded-lg p-5 my-3 md:my-10 flex flex-col gap-3">
             <img className="w-10" src="./img/icon.png" alt="" />
-            <h1 className="font-medium text-lg dark:text-white">
-              UX / UI Design
+            <h1 className={`font-medium text-lg ${isDarkMode && "text-white"}`}>
+              Database Management
             </h1>
             <p className="text-gray-400">
               I specialize in creating interactive websites for individuals and
@@ -81,8 +85,8 @@ const Services = () => {
           </div>
           <div className="w-full md:w-4/12 shadow-xl rounded-lg p-5 my-3 md:my-10 flex flex-col gap-3">
             <img className="w-10" src="./img/icon.png" alt="" />
-            <h1 className="font-medium text-lg dark:text-white">
-              UX / UI Design
+            <h1 className={`font-medium text-lg ${isDarkMode && "text-white"}`}>
+              Convert Figma design to code with tailwind and React
             </h1>
             <p className="text-gray-400">
               I specialize in creating interactive websites for individuals and
